@@ -38,6 +38,3 @@ def main_text(path):
     result = stt.transcribe(path, language='en')
     print(result['text'])   
     return main_sign(result)
-    # # Translate audio to English
-    # translation = stt.translate('non_english_audio.wav')
-    # print(translation['text'])
