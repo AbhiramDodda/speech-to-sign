@@ -37,4 +37,4 @@ def main_text(path):
     stt = WhisperSTT(model_size='small')
     result = stt.transcribe(path, language='en')
     print(result['text'])   
-    return main_sign(result)
+    return main_sign(result['text'])

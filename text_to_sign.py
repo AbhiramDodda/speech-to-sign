@@ -10,6 +10,7 @@ class SignLanguageCompiler:
         
     def find_file(self, name):
         name = name.capitalize()
+        print(name)
         for ext in self.supported_extensions:
             path = os.path.join(self.signs_dir, f"{name}{ext}")
             if os.path.exists(path):
@@ -36,6 +37,7 @@ class SignLanguageCompiler:
     
     def compile_sentence(self, sentence, output_path):
         words = ''.join(c for c in sentence if c.isalnum() or c.isspace()).split()
+        print(words)
         
         clips = []
         for word in words:
@@ -66,9 +68,9 @@ class SignLanguageCompiler:
 
 def main_sign(text):
     compiler = SignLanguageCompiler(signs_directory="signs/")
-    for i in range(10):
-        print(text)
-    sentence = "I have an Apple"
+    #sentence = "I have an Apple"
+    print("-----------------------------------------------------")
+    print(text)
     compiler.compile_sentence(text, "output_sign_language.mp4")
     return "output_sign_language.mp4"
 
